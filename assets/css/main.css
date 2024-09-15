@@ -1565,7 +1565,12 @@ input, select, textarea {
 			}
 
 		}
-
+		.founder-image {
+			width: 250px; /* Adjust this value to make the image smaller or larger */
+			height: 250px; /* Keep the same as width for a perfect circle */
+			border-radius: 50%; /* This makes the image round */
+			object-fit: cover; /* This ensures the image covers the area without stretching */
+		}
 /* Footer */
 
 	#footer {
