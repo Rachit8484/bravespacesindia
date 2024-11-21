@@ -189,7 +189,7 @@ input, select, textarea {
 		}
 
 		h1.major, h2.major, h3.major, h4.major, h5.major, h6.major {
-			border-bottom: solid 1px #ffffff;
+			border-bottom: solid 1px #40E0D0;
 			width: -moz-max-content;
 			width: -webkit-max-content;
 			width: -ms-max-content;
@@ -1095,17 +1095,28 @@ input, select, textarea {
 		overflow: hidden;
 		z-index: -1;
 	}
-	#bg video {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		min-width: 100%;
-		min-height: 100%;
+	#bg .slideshow {
+		position: fixed;
 		width: 100%;
 		height: 100%;
-		object-fit: cover; /* Ensures the full video is shown without cropping */
-		transform: translate(-50%, -50%);
+		top: 0;
+		left: 0;
 		z-index: -1;
+	}
+
+	#bg .slideshow img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+		opacity: 0;
+		transition: opacity 1s ease-in-out;
+	}
+
+	#bg .slideshow img.active {
+		opacity: 1;
 	}
 
 	body.is-article-visible #bg:after {
@@ -1611,4 +1622,47 @@ input, select, textarea {
 .pdf-links a {
     margin-bottom: 1rem;
     display: inline-block;
+}
+
+/* Add or update these styles */
+#header {
+    background: transparent !important;
+}
+
+#header .content {
+    background: transparent !important;
+    border-color: #ffffff;
+}
+
+#header .content .inner {
+    background: transparent !important;
+}
+
+/* Remove any background from main title */
+#header h1 {
+    background: transparent !important;
+    color: #ffffff !important;
+}
+
+/* Only apply white background to specific articles */
+#main article {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Keep header area completely transparent */
+#header nav ul {
+    background: transparent !important;
+}
+
+#header nav ul li a {
+    background: transparent !important;
+}
+
+#header nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.075) !important;
+}
+
+/* Override any existing background styles */
+.inner {
+    background: transparent !important;
 }
